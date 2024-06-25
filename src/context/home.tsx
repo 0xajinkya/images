@@ -27,8 +27,7 @@ interface IHome {
   query: string;
   photos: IAllPhotos | [];
   setQuery: Dispatch<React.SetStateAction<string>>;
-  prevPage: () => void;
-  nextPage: () => void;
+  setPage: Dispatch<React.SetStateAction<number>>
 }
 
 export const HomeContext = createContext<IHome>({
@@ -36,8 +35,7 @@ export const HomeContext = createContext<IHome>({
   query: "",
   photos: [],
   setQuery: () => {},
-  nextPage: () => {},
-  prevPage: () => {},
+  setPage: () => {},
 });
 
 export const HomeProvider = ({ children }: { children: ReactNode }) => {
@@ -51,6 +49,7 @@ export const HomeProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const fetchImages = async () => {
+      
       let que = query;
       try {
         const res = await axios.get(
@@ -107,8 +106,7 @@ export const HomeProvider = ({ children }: { children: ReactNode }) => {
         page,
         query,
         setQuery,
-        prevPage,
-        nextPage,
+        setPage
       }}
     >
       {children}

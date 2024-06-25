@@ -8,9 +8,11 @@ export const MainInput = ({
   type = "text",
   fieldName,
   handleChange,
+  value
 }: {
   placeholder: string;
   fieldName: string;
+  value: string;
   required?: boolean;
   icon?: JSX.Element;
   type?: string;
@@ -46,6 +48,7 @@ export const MainInput = ({
             </Icon>
           )
         }
+        value={value}
         placeholder={placeholder}
         required={required}
         onFocus={() => setFocused(true)}

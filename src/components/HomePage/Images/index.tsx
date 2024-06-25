@@ -7,11 +7,12 @@ export const Images = ({ images }: { images: IPhoto[] }) => {
     <Box
       sx={{
         display: "grid",
-        mb: "20px"
+        mb: "20px",
       }}
     >
       <Grid container rowSpacing={6} columnSpacing={2}>
-        {images && images.length > 0 &&
+        {images &&
+          images.length > 0 &&
           images.map((img, i) => <ImageCard key={i} image={img} />)}
       </Grid>
     </Box>

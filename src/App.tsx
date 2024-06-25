@@ -7,13 +7,20 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import { Home } from "./pages";
+import { Details, Home } from "./pages";
 import { theme } from "./theme";
 import { SnackbarProvider } from "notistack";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="/" element={<Home />} />)
-);
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />
+  }, 
+  {
+    path: "/details/:id",
+    element: <Details />
+  }
+]);
 
 function App() {
   return (

@@ -4,7 +4,7 @@ import { Images, Navbar, Paginator } from "../../../components";
 import { HomeContext, IAllPhotos } from "../../../context";
 
 export const HomePage = () => {
-  const { photos, page, setQuery, prevPage, nextPage } = useContext(HomeContext);
+  const { photos, page, setQuery, setPage, query } = useContext(HomeContext);
 
   return (
     <Box
@@ -14,15 +14,12 @@ export const HomePage = () => {
         gap: "18px",
       }}
     >
-      <Navbar 
-        setQuery={setQuery}
-      />
+      <Navbar setQuery={setQuery} query={query} />
       <Divider />
       <Images images={(photos as IAllPhotos).photos} />
-      <Paginator 
+      <Paginator
         meta={(photos as IAllPhotos).meta}
-        nextPage={nextPage}
-        prevPage={prevPage}
+        setPage={setPage}
         page={page}
       />
     </Box>
