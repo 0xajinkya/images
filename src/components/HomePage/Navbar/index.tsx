@@ -1,10 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import { MainInput, Search } from "../../Global";
-import { useContext } from "react";
+import { Dispatch, useContext } from "react";
 import { HomeContext } from "../../../context";
 
-export const Navbar = () => {
-  const { setQuery } = useContext(HomeContext);
+export const Navbar = ({setQuery}: {setQuery: Dispatch<React.SetStateAction<string>>}) => {
 
   const handleChange = (key: string, value: string) => {
     setQuery(value);

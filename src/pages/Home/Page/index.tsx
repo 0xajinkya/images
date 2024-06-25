@@ -1,10 +1,10 @@
 import { Box, Divider } from "@mui/material";
 import { useContext } from "react";
-import { Images, Navbar } from "../../../components";
+import { Images, Navbar, Paginator } from "../../../components";
 import { HomeContext, IAllPhotos } from "../../../context";
 
 export const HomePage = () => {
-  const { photos } = useContext(HomeContext);
+  const { photos, page, setQuery, prevPage, nextPage } = useContext(HomeContext);
 
   return (
     <Box
@@ -14,10 +14,17 @@ export const HomePage = () => {
         gap: "18px",
       }}
     >
-      <Navbar />
+      <Navbar 
+        setQuery={setQuery}
+      />
       <Divider />
       <Images images={(photos as IAllPhotos).photos} />
-      
+      <Paginator 
+        meta={(photos as IAllPhotos).meta}
+        nextPage={nextPage}
+        prevPage={prevPage}
+        page={page}
+      />
     </Box>
   );
 };

@@ -12,12 +12,14 @@ export interface IPhoto {
   url: string;
 }
 
+export interface IMeta {
+  total: number;
+  pages: number;
+}
+
 export interface IAllPhotos {
   photos: IPhoto[];
-  meta: {
-    total: number;
-    pages: number;
-  };
+  meta: IMeta
 }
 
 interface IHome {

@@ -3,7 +3,7 @@ import { IPhoto } from "../../../context"
 
 export const ImageCard = ({image}: {image: IPhoto}) => {
     return (
-        <Grid key={image.id} item xs={12} sm={6} md={4}>
+        <Grid key={image.id} item xs={12} sm={6} md={4} >
             <Box
                 sx={{
                     backgroundColor: "#D2D2D2",
@@ -41,6 +41,11 @@ export const ImageCard = ({image}: {image: IPhoto}) => {
             </Typography>
             <Typography
                 variant={"normal"}
+                sx={{
+                    width: "100%",
+                    whiteSpace: "wrap",
+                    textOverflow: 'ellipsis',
+                }}
             >
                 {image.description}
             </Typography>

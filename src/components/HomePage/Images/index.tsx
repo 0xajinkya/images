@@ -11,7 +11,7 @@ export const Images = ({ images }: { images: IPhoto[] }) => {
       }}
     >
       <Grid container rowSpacing={6} columnSpacing={2}>
-        {images.length > 0 &&
+        {images && images.length > 0 &&
           images.map((img, i) => <ImageCard key={i} image={img} />)}
       </Grid>
     </Box>
