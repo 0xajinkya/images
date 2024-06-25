@@ -1,5 +1,3 @@
-"use client";
-
 import { Box, Icon, InputBase } from "@mui/material";
 import { useState } from "react";
 

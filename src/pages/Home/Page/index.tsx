@@ -1,5 +1,5 @@
-import { Box, Divider, Typography } from "@mui/material";
-import { ReactNode, useContext } from "react";
+import { Box, Divider } from "@mui/material";
+import { useContext } from "react";
 import { Images, Navbar } from "../../../components";
 import { HomeContext, IAllPhotos } from "../../../context";
 
